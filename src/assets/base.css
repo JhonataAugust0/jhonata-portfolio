@@ -4,36 +4,11 @@
   --var-background-color-cian: #4A6277;
   --var-background-color-blue: #1F3547;
   --var-background-color-dark-blue: #1F3547;
+  --var-color-code-block-blue: #3d5264;
+  --var-color-code-text-white: #ffffff;
+  --var-color-text-button-white: #fff;
+  --section-gap: 160px;
 }
-
-/*!* semantic color variables for this project *!*/
-/*:root {*/
-/*  --color-background: var(--vt-c-white);*/
-/*  --color-background-soft: var(--vt-c-white-soft);*/
-/*  --color-background-mute: var(--vt-c-white-mute);*/
-
-/*  --color-border: var(--vt-c-divider-light-2);*/
-/*  --color-border-hover: var(--vt-c-divider-light-1);*/
-
-/*  --color-heading: var(--vt-c-text-light-1);*/
-/*  --color-text: var(--vt-c-text-light-1);*/
-
-/*  --section-gap: 160px;*/
-/*}*/
-
-/*@media (prefers-color-scheme: dark) {*/
-/*  :root {*/
-/*    --color-background: var(--vt-c-black);*/
-/*    --color-background-soft: var(--vt-c-black-soft);*/
-/*    --color-background-mute: var(--vt-c-black-mute);*/
-
-/*    --color-border: var(--vt-c-divider-dark-2);*/
-/*    --color-border-hover: var(--vt-c-divider-dark-1);*/
-
-/*    --color-heading: var(--vt-c-text-dark-1);*/
-/*    --color-text: var(--vt-c-text-dark-2);*/
-/*  }*/
-/*}*/
 
 *,
 *::before,
@@ -45,14 +20,15 @@
 
 body {
   min-height: 100vh;
-  color: var(--color-text);
-  background: var(--color-background);
+  color: var(--var-color-code-text-white);
+  background: var(--var-background-color-dark-blue);
   transition:
     color 0.5s,
     background-color 0.5s;
   line-height: 1.6;
   font-family:
     Inter,
+    'Source Code Pro',
     -apple-system,
     BlinkMacSystemFont,
     'Segoe UI',
