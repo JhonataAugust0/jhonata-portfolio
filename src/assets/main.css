@@ -1,61 +1,43 @@
 @import './base.css';
 
+/* Estilos para o elemento com o id "app" */
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+  max-width: 1280px;                                        /* Define a largura máxima do elemento como 1280 pixels */
+  margin: 0 auto;                                           /* Centraliza o elemento horizontalmente na página */
+  padding: 2rem;                                            /* Adiciona preenchimento interno ao elemento */
+  font-weight: normal;                                      /* Define o peso da fonte do texto como normal */
 }
 
-a, .green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
-}
-
+/* Estilos aplicados quando o dispositivo tem suporte a hover */
 @media (hover: hover) {
   a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+    background-color: hsla(160, 100%, 37%, 0.2);            /* Define a cor de fundo dos links quando hover */
   }
 }
 
+/* Estilos aplicados quando a largura mínima da tela é 1024 pixels */
 @media (min-width: 1024px) {
   body {
-    display: flex;
-    place-items: center;
+    display: flex;                                         /* Define o corpo da página como um contêiner flexível */
+    place-items: center;                                   /* Centraliza o conteúdo verticalmente e horizontalmente */
   }
 
   #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+    display: grid;                                         /* Define o elemento com o id "app" como um contêiner de grid */
+    grid-template-columns: 1fr 1fr;                        /* Define duas colunas com largura igual */
+    padding: 0 2rem;                                       /* Remove o preenchimento horizontal do elemento */
   }
 }
 
+/* Estilos adicionais aplicados quando a largura mínima da tela é 1024 pixels */
 @media (min-width: 1024px) {
   header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+    display: flex;                                          /* Define o cabeçalho como um contêiner flexível */
+    place-items: center;                                    /* Centraliza o conteúdo verticalmente e horizontalmente */
+    padding-right: calc(var(--section-gap) / 2);            /* Adiciona preenchimento à direita com metade do valor de uma variável */
   }
 
   .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
+    margin: 0 2rem 0 0;                                     /* Adiciona margem à direita do elemento com a classe "logo" */
   }
 }
