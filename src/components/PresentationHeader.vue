@@ -7,7 +7,7 @@ export default defineComponent({
   components: { CustomButton },
   data() {
     return {
-      textLanguages: {
+      textLanguages:  {
         0: '\nimport pytest\n' +
           '\n' +
           'def devName() -> str:\n' +
@@ -50,7 +50,7 @@ export default defineComponent({
           '    }\n' +
           '}',
         5: 'Opa, essa opção infelizmente não temos,\nmas quem sabe você não pode me sugerir isso entrando\n em contato comigo! Veja os links no avatar :)'
-      },
+      } as Record<number, string>,
       buttonText: "",
       intervalId: 0,
     };
@@ -71,7 +71,8 @@ export default defineComponent({
 
       if (!(key_text in this.textLanguages)) {
         const keys = Object.keys(this.textLanguages);
-        key_text = keys[keys.length - 1];
+        const numericKeys = keys.map(Number).sort((a, b) => a - b);
+        key_text = numericKeys[numericKeys.length - 1];
       }
 
       this.intervalId = setInterval(() => {
