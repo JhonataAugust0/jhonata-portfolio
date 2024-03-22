@@ -89,7 +89,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="presentation-header">
+  <div class="presentation-header-container">
     <div class="content-wrapper">
       <div class="text-presentation-container">
         <pre>
@@ -150,11 +150,6 @@ export default defineComponent({
           buttonTextColor="var(--var-color-text-button-white)"
           @click="changeButtonText(4)"
         />
-<!--        <button class="language-programming-button" @click="changeButtonText('Python')">Python</button>-->
-<!--        <button class="language-programming-button" @click="changeButtonText('Php')">Php</button>-->
-<!--        <button class="language-programming-button" @click="changeButtonText('C')">C</button>-->
-<!--        <button class="language-programming-button" @click="changeButtonText('JS')">JS</button>-->
-<!--        <button class="language-programming-button" @click="changeButtonText('C#')">C#</button>-->
       </div>
 
       <div class="text-office-container">
@@ -168,13 +163,14 @@ export default defineComponent({
 
 <style scoped>
 /* Essa classe está estilizada para definir um cabeçalho de apresentação fixado no topo da página */
-.presentation-header {
-  position: fixed;                                      /* Define a posição do cabeçalho como fixa */
+.presentation-header-container {
+  position: absolute;                                      /* Define a posição do cabeçalho como fixa */
   top: 0;                                               /* Alinha o cabeçalho no topo da janela do navegador */
   left: 0;                                              /* Alinha o cabeçalho à esquerda da janela do navegador */
-  width: 100%;                                          /* Define a largura do cabeçalho para ocupar toda a largura da janela */
-  min-height: 40%;                                      /* Define a altura mínima do cabeçalho para 40% da altura da janela */
+  width: 100vw;                                         /* Define a largura do cabeçalho para ocupar toda a largura da janela */
   background-color: var(--var-background-color-blue);   /* Define a cor de fundo do cabeçalho */
+  z-index: 5;
+  box-shadow: var(--var-background-color-dark-blue) 2px 2px 2px;
 }
 
 /* Esta classe define o contêiner de conteúdo, que envolve o conteúdo da apresentação */
@@ -195,12 +191,15 @@ export default defineComponent({
 
 /* Este estilo define a formatação para o bloco de código */
 pre {
-  padding: 16px;                                        /* Adiciona preenchimento ao redor do bloco de código */
+  padding: 18px;                                        /* Adiciona preenchimento ao redor do bloco de código */
   overflow: auto;                                       /* Permite que o conteúdo do bloco de código seja rolado se necessário */
   border-radius: 8px;                                   /* Adiciona cantos arredondados ao bloco de código */
   white-space: pre-wrap;                                /* Define como o espaço em branco deve ser tratado dentro do bloco de código */
   background-color: var(--var-color-code-block-blue);   /* Define a cor de fundo do bloco de código */
   font-family: 'Source Code Pro', Inter, monospace;     /* Define a fonte do bloco de código */
+  height: 420px;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 /* Este estilo define a formatação para o texto dentro do bloco de código */
@@ -214,22 +213,6 @@ code {
   display: flex;                                        /* Define o contêiner dos botões como um contêiner flexível */
   justify-content: center;                              /* Centraliza os botões horizontalmente dentro do contêiner */
   gap: 12px;                                            /* Define o espaço entre os botões */
-}
-
-/* Esta classe define a formatação para os botões de linguagens de programação */
-.language-programming-button {
-  display: flex;                                        /* Define os botões como elementos flexíveis */
-  align-items: center;                                  /* Centraliza o texto verticalmente dentro dos botões */
-  justify-content: center;                              /* Centraliza o texto horizontalmente dentro dos botões */
-  width: 72px;                                          /* Define a largura dos botões */
-  background-color: var(--var-color-code-block-blue);   /* Define a cor de fundo dos botões */
-  color: var(--var-color-text-button-white);            /* Define a cor do texto dos botões */
-  border: 1px solid var(--var-color-code-block-blue);   /* Adiciona uma borda aos botões */
-  border-radius: 4px;                                   /* Adiciona cantos arredondados aos botões */
-  padding: 8px 16px;                                    /* Adiciona preenchimento aos botões */
-  font-family: Inter, monospace;                        /* Define a fonte dos botões */
-  cursor: pointer;                                      /* Altera o cursor para um ponteiro ao passar sobre os botões */
-  transition: background-color 0.3s ease;               /* Adiciona uma transição suave à cor de fundo dos botões */
 }
 
 /* Esta classe define a formatação para os botões de linguagens em estado de foco */
@@ -255,7 +238,7 @@ code {
 
 /* Responsividade para dispositivos móveis */
 @media only screen and (max-width: 768px) {
-  .presentation-header {
+  .presentation-header-container {
     padding: 10px;                                      /* Reduz o preenchimento do cabeçalho para 10 pixels */
   }
 
