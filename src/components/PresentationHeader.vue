@@ -154,9 +154,7 @@ export default defineComponent({
       </div>
 
       <div class="text-office-container">
-        <h1 class="text-office">
-          <b>Desenvolvedor de Software</b>
-        </h1>
+        <h1 class="text-office">Desenvolvedor de Software</h1>
       </div>
     </div>
   </div>
@@ -186,7 +184,7 @@ export default defineComponent({
 
 /* Esta classe define o contêiner para o texto da apresentação */
 .text-presentation-container {
-  margin-bottom: 20px;                                  /* Adiciona espaço entre os elementos abaixo deste contêiner */
+  margin-bottom: 2px;                                  /* Adiciona espaço entre os elementos abaixo deste contêiner */
   min-width: 55%;                                       /* Define a largura mínima do contêiner para 55% da largura do contêiner pai */
 }
 
@@ -196,9 +194,7 @@ pre {
   overflow: auto;                                       /* Permite que o conteúdo do bloco de código seja rolado se necessário */
   border-radius: 8px;                                   /* Adiciona cantos arredondados ao bloco de código */
   white-space: pre-wrap;                                /* Define como o espaço em branco deve ser tratado dentro do bloco de código */
-  background-color: var(--var-color-code-block-blue);   /* Define a cor de fundo do bloco de código */
-  font-family: 'Source Code Pro', Inter, monospace;     /* Define a fonte do bloco de código */
-  height: 420px;
+  height: 390px;
   overflow-x: hidden;
   overflow-y: hidden;
 }
@@ -207,6 +203,8 @@ pre {
 code {
   font-size: 18px;                                      /* Define o tamanho da fonte do texto */
   color: var(--var-color-code-text-white);              /* Define a cor do texto */
+  font-family: 'Source Code Pro', Inter, monospace;     /* Define a fonte do bloco de código */
+  font-weight: 400;                                     /* Define a espessura da fonte como 300 (leve) */
 }
 
 /* Esta classe define o contêiner para os botões de linguagens de programação */
@@ -226,6 +224,7 @@ code {
   display: flex;                                        /* Torna o contêiner um contêiner flexível */
   align-items: center;                                  /* Centraliza verticalmente */
   justify-content: center;                              /* Centraliza horizontalmente */
+  margin-top: 8px;
 }
 
 /* Estilos para o texto da função */
@@ -233,7 +232,7 @@ code {
   color: var(--var-color-text-button-white);            /* Define a cor do texto como branco */
   font-family: Inter, monospace;                        /* Define a fonte do texto */
   font-size: 28px;                                      /* Define o tamanho da fonte como 28 pixels */
-  font-weight: 300;                                     /* Define a espessura da fonte como 300 (leve) */
+  font-weight: 500;                                     /* Define a espessura da fonte como 300 (leve) */
   font-style: normal;                                   /* Define o estilo da fonte como normal */
 }
 

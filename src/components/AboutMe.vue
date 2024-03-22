@@ -1,8 +1,20 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
+import TextContent from '@/components/TextContent.vue'
 
 export default defineComponent({
   name: "AboutMe",
+  components: { TextContent },
+  data () {
+    const textAboutMe = [
+      "Olá! Me chamo Jhonata, sou desenvolvedor full-stack com 3 anos de experiência e formação em informática pelo Senac e em sistemas de informação pela PUC Minas, mas entrei no mundo da tecnologia quando fui competidor da Olimpíada Brasileira de Informática e de Robótica aos 13 anos!",
+      "Tenho uma história de sucesso em competições acadêmicas, incluindo também competições de iniciação científicas e torneios de Robótica, com cinco títulos nacionais, um internacional e a publicação de um artigo.",
+      "Estou animado para compartilhar minhas experiências e projetos, e contribuir significativamente para inovarmos juntos! Vem comigo nessa?"
+    ]
+    return {
+      textAboutMe,
+    }
+  },
 });
 </script>
 
@@ -11,15 +23,7 @@ export default defineComponent({
     <div class="content-wrapper">
       <div class="text-presentation-container">
         <h1>Sobre mim</h1>
-        <p>
-          Olá! Eu sou Jhonata, desenvolvedor full-stack com anos de experiência e formação em informática pelo Senac e sistemas de informação pela PUC Minas, mas entrei no mundo da tecnologia quando fui competidor da Olimpíada Brasileira de Informática e de Robótica aos 13 anos!
-        </p>
-        <p>
-          Tenho uma história de sucesso em competições acadêmicas, incluindo também competições de iniciação científicas e torneios de Robótica, com cinco títulos nacionais, um internacional e a publicação de um artigo.
-        </p>
-        <p>
-          Estou animado para compartilhar minhas experiências e projetos, e contribuir significativamente para inovarmos juntos! Vem comigo nessa?
-        </p>
+          <TextContent :text=textAboutMe />
       </div>
     </div>
   </div>
@@ -50,5 +54,13 @@ export default defineComponent({
 .text-presentation-container {
   margin-top: 80px; /* Adiciona espaço entre os elementos acima deste contêiner */
   width: 100%; /* Define a largura mínima do contêiner para 55% da largura do contêiner pai */
+}
+
+h1 {
+  color: var(--var-color-text-button-white);            /* Define a cor do texto como branco */
+  font-family: Inter, monospace;                        /* Define a fonte do texto */
+  font-size: 22px;                                      /* Define o tamanho da fonte como 28 pixels */
+  font-weight: 400;                                     /* Define a espessura da fonte como 300 (leve) */
+  font-style: normal;                                   /* Define o estilo da fonte como normal */
 }
 </style>

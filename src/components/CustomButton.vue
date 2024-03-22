@@ -9,6 +9,8 @@ interface CustomButtonProps {
   buttonBorderColor: string;
   buttonBorderRadius?: string;
   buttonTextColor?: string;
+  buttonFontWeight?: string;
+  buttonFontSize?: string;
   handleClick?: Function;
 }
 
@@ -43,10 +45,18 @@ export default defineComponent({
       type: String,
       default: '#3d5264'
     },
+    buttonFontWeight: {
+      type: String,
+      default: '500',
+    },
+    buttonFontSize: {
+      type: String,
+      default: '14px',
+    },
     handleClick: {
       type: Function,
       required: false,
-    }
+    },
   },
   data (props: CustomButtonProps) {
     const buttonProps = props;
@@ -67,6 +77,8 @@ export default defineComponent({
       borderRadius: buttonProps.buttonBorderRadius,
       border: buttonProps.buttonBorderColor,
       color: buttonTextColor,
+      fontWeight: buttonFontWeight,
+      fontSize: buttonFontSize,
     }"
     @click="buttonProps.handleClick"
   >
