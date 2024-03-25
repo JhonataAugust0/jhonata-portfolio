@@ -163,7 +163,7 @@ export default defineComponent({
 <style scoped>
 /* Essa classe está estilizada para definir um cabeçalho de apresentação fixado no topo da página */
 .presentation-header-container {
-  position: absolute;                                      /* Define a posição do cabeçalho como fixa */
+  position: absolute;                                   /* Define a posição do cabeçalho como fixa */
   top: 0;                                               /* Alinha o cabeçalho no topo da janela do navegador */
   left: 0;                                              /* Alinha o cabeçalho à esquerda da janela do navegador */
   width: 100vw;                                         /* Define a largura do cabeçalho para ocupar toda a largura da janela */

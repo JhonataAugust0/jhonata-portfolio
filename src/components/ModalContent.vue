@@ -5,7 +5,13 @@
     padding: modalPadding,
     border: modalBorderColor,
   }">
-    <slot name="content"></slot>
+    <template v-if="isImage">
+      <img :src="content" alt="Imagem" :style="{ width: imageWidth, height: imageHeight }" />
+    </template>
+    <template v-else>
+      <div>
+        <slot name="content">{{ content }}</slot></div>
+    </template>
   </div>
 </template>
 
@@ -17,6 +23,8 @@ interface ModalContentProps {
   modalBackgroundColor?: string;
   modalPadding?: string;
   modalBorderColor?: string;
+  imageWidth?: string;
+  imageHeight?: string;
 }
 
 export default defineComponent({
@@ -38,7 +46,24 @@ export default defineComponent({
       type: String,
       default: '1px solid var(--var-color-code-block-blue)'
     },
+    content: {
+      type: String,
+      default: ''
+    },
+    imageWidth: {
+      type: String,
+      default: 'auto'
+    },
+    imageHeight: {
+      type: String,
+      default: 'auto'
+    }
   },
+  computed: {
+    isImage(): boolean {
+      return typeof this.content === 'string' && /\.(jpg|jpeg|png|gif|svg|ico)$/.test(this.content);
+    }
+  }
 });
 </script>
 

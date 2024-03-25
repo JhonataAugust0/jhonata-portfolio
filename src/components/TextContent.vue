@@ -8,7 +8,7 @@
         color: textTextColor,
         fontWeight: textFontWeight,
         fontSize: textFontSize,
-        textAlign: textAlign,
+        textAlign: definitionTextAlign,
       }"></p>
     </template>
   </ModalContent>
@@ -71,5 +71,11 @@ export default defineComponent({
       return this.text.join('<br>');
     }
   },
+  data(props: TextModalProps) {
+    const definitionTextAlign: 'justify' | 'left' | 'center' | 'right' = props.textAlign ? props.textAlign as 'justify' | 'left' | 'center' | 'right' : 'justify';
+    return {
+      definitionTextAlign,
+    };
+  }
 });
 </script>
