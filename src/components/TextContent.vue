@@ -1,5 +1,5 @@
 <template>
-  <ModalContent>
+  <ModalContent :modalBackgroundColor="textBackgroundColor" :modalBorderColor="textBorderColor">
     <template v-slot:content>
       <p class="a" v-html="formattedText" :style="{
         fontFamily: textFontFamily,
@@ -27,6 +27,8 @@ interface TextModalProps {
   textTextColor?: string;
   textFontWeight?: string;
   textFontSize?: string;
+  textBorderColor?: string
+  textBackgroundColor?: string
 }
 
 export default defineComponent({
@@ -64,6 +66,14 @@ export default defineComponent({
     textFontSize: {
       type: String,
       default: '18px'
+    },
+    textBackgroundColor: {
+      type: String,
+      default: 'var(--var-background-modal-blue)',
+    },
+    textBorderColor: {
+      type: String,
+      default: 'var(--var-background-modal-blue)',
     },
   },
   computed: {

@@ -2,12 +2,15 @@
 import { defineComponent } from 'vue'
 import CustomButton from '@/components/CustomButton.vue'
 
+interface TextLanguagesInterface {
+  [key: number]: string;
+}
+
 export default defineComponent({
   name: "PresentationHeader",
   components: { CustomButton },
   data() {
-    return {
-      textLanguages:  {
+    const textLanguages: TextLanguagesInterface =  {
         0: '\nimport pytest\n' +
           '\n' +
           'def devName() -> str:\n' +
@@ -50,7 +53,9 @@ export default defineComponent({
           '    }\n' +
           '}',
         5: 'Opa, essa opção infelizmente não temos,\nmas quem sabe você não pode me sugerir isso entrando\n em contato comigo! Veja os links no avatar :)'
-      } as Record<number, string>,
+      }
+    return {
+      textLanguages,
       buttonText: "",
       intervalId: 0,
     };
@@ -78,7 +83,7 @@ export default defineComponent({
       this.intervalId = setInterval(() => {
         this.buttonText += this.textLanguages[key_text].charAt(index++);
         if (index === this.textLanguages[key_text].length) clearInterval(this.intervalId);
-      }, 15);
+      }, 10);
     },
   },
   mounted() {
@@ -103,51 +108,51 @@ export default defineComponent({
       <div class="programming-languages-button-container">
         <CustomButton
           buttonText="Python"
-          buttonColor="var(--var-color-code-block-blue)"
+          buttonColor="var(--var-background-modal-blue)"
           buttonWidth="72px"
           buttonHeight="38px"
           borderRadius="4px"
-          borderColor="1px solid var(--var-color-code-block-blue)"
+          borderColor="1px solid var(--var-background-modal-blue)"
           buttonTextColor="var(--var-color-text-button-white)"
           @click="changeButtonText(0)"
         />
         <CustomButton
           buttonText="Php"
-          buttonColor="var(--var-color-code-block-blue)"
+          buttonColor="var(--var-background-modal-blue)"
           buttonWidth="72px"
           buttonHeight="38px"
           borderRadius="4px"
-          borderColor="1px solid var(--var-color-code-block-blue)"
+          borderColor="1px solid var(--var-background-modal-blue)"
           buttonTextColor="var(--var-color-text-button-white)"
           @click="changeButtonText(1)"
         />
         <CustomButton
           buttonText="C"
-          buttonColor="var(--var-color-code-block-blue)"
+          buttonColor="var(--var-background-modal-blue)"
           buttonWidth="72px"
           buttonHeight="38px"
           borderRadius="4px"
-          borderColor="1px solid var(--var-color-code-block-blue)"
+          borderColor="1px solid var(--var-background-modal-blue)"
           buttonTextColor="var(--var-color-text-button-white)"
           @click="changeButtonText(2)"
         />
         <CustomButton
           buttonText="JS"
-          buttonColor="var(--var-color-code-block-blue)"
+          buttonColor="var(--var-background-modal-blue)"
           buttonWidth="72px"
           buttonHeight="38px"
           borderRadius="4px"
-          borderColor="1px solid var(--var-color-code-block-blue)"
+          borderColor="1px solid var(--var-background-modal-blue)"
           buttonTextColor="var(--var-color-text-button-white)"
           @click="changeButtonText(3)"
         />
         <CustomButton
           buttonText="C#"
-          buttonColor="var(--var-color-code-block-blue)"
+          buttonColor="var(--var-background-modal-blue)"
           buttonWidth="72px"
           buttonHeight="38px"
           borderRadius="4px"
-          borderColor="1px solid var(--var-color-code-block-blue)"
+          borderColor="1px solid var(--var-background-modal-blue)"
           buttonTextColor="var(--var-color-text-button-white)"
           @click="changeButtonText(4)"
         />
@@ -170,6 +175,9 @@ export default defineComponent({
   background-color: var(--var-background-color-blue);   /* Define a cor de fundo do cabeçalho */
   z-index: 5;
   box-shadow: var(--var-background-color-dark-blue) 2px 2px 2px;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
 }
 
 /* Esta classe define o contêiner de conteúdo, que envolve o conteúdo da apresentação */
@@ -186,17 +194,18 @@ export default defineComponent({
 .text-presentation-container {
   margin-bottom: 2px;                                  /* Adiciona espaço entre os elementos abaixo deste contêiner */
   min-width: 55%;                                       /* Define a largura mínima do contêiner para 55% da largura do contêiner pai */
+  overflow: hidden;
 }
 
 /* Este estilo define a formatação para o bloco de código */
 pre {
-  padding: 18px;                                        /* Adiciona preenchimento ao redor do bloco de código */
-  overflow: auto;                                       /* Permite que o conteúdo do bloco de código seja rolado se necessário */
+  padding: 18px 18px 4px 18px;                                        /* Adiciona preenchimento ao redor do bloco de código */
   border-radius: 8px;                                   /* Adiciona cantos arredondados ao bloco de código */
   white-space: pre-wrap;                                /* Define como o espaço em branco deve ser tratado dentro do bloco de código */
-  height: 390px;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  min-height: 355px;
+  max-height: 390px;
+  width: 100%;
+  overflow: hidden;
 }
 
 /* Este estilo define a formatação para o texto dentro do bloco de código */
@@ -205,6 +214,7 @@ code {
   color: var(--var-color-code-text-white);              /* Define a cor do texto */
   font-family: 'Source Code Pro', Inter, monospace;     /* Define a fonte do bloco de código */
   font-weight: 400;                                     /* Define a espessura da fonte como 300 (leve) */
+  overflow: hidden;
 }
 
 /* Esta classe define o contêiner para os botões de linguagens de programação */
@@ -212,11 +222,6 @@ code {
   display: flex;                                        /* Define o contêiner dos botões como um contêiner flexível */
   justify-content: center;                              /* Centraliza os botões horizontalmente dentro do contêiner */
   gap: 12px;                                            /* Define o espaço entre os botões */
-}
-
-/* Esta classe define a formatação para os botões de linguagens em estado de foco */
-.language-programming-button:hover {
-  background-color: var(--var-background-color-cian);   /* Altera a cor de fundo dos botões ao passar sobre eles */
 }
 
 /* Esta classe define o estilo do contêiner do texto de cargo */

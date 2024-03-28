@@ -36,7 +36,7 @@ export default defineComponent({
     },
     modalBackgroundColor: {
       type: String,
-      default: 'var(--var-background-color-cian)'
+      default: 'var(--var-background-modal-blue)'
     },
     modalPadding: {
       type: String,
@@ -44,7 +44,7 @@ export default defineComponent({
     },
     modalBorderColor: {
       type: String,
-      default: '1px solid var(--var-color-code-block-blue)'
+      default: '1px solid var(--var-background-modal-blue)'
     },
     content: {
       type: String,
@@ -63,7 +63,7 @@ export default defineComponent({
     isImage(): boolean {
       return typeof this.content === 'string' && /\.(jpg|jpeg|png|gif|svg|ico)$/.test(this.content);
     }
-  }
+  },
 });
 </script>
 
@@ -72,5 +72,13 @@ export default defineComponent({
   display: flex;
   margin-top: 6px;
   left: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .container-description {
+    width: 95%;
+    justify-content: center;
+    align-items: center;
+  }
 }
 </style>

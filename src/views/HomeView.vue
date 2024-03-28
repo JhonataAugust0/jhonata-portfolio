@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import PresentationHeader from '@/components/PresentationHeader.vue'
 import AboutMe from '@/components/AboutMe.vue'
+import SkillsSection from '@/components/SkillsSection.vue'
 
 </script>
 
@@ -9,15 +10,15 @@ import AboutMe from '@/components/AboutMe.vue'
     <div class="home">
       <PresentationHeader />
       <AboutMe />
+      <SkillsSection />
     </div>
   </main>
 </template>
 
-<style scoped>
+<style>
 .home {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
-  flex-flow: column;
+  align-items: center;
 }
 </style>

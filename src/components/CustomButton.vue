@@ -23,7 +23,7 @@ export default defineComponent({
     },
     buttonColor: {
       type: String,
-      default: 'var(--var-color-code-block-blue)'
+      default: 'var(--var-background-modal-blue)'
     },
     buttonHeight: {
       type: String,
@@ -39,7 +39,7 @@ export default defineComponent({
     },
     buttonBorderColor: {
       type: String,
-      default: '1px solid var(--var-color-code-block-blue)'
+      default: '1px solid var(--var-background-modal-blue)'
     },
     buttonTextColor: {
       type: String,
@@ -62,6 +62,7 @@ export default defineComponent({
     const buttonProps = props;
     return {
       buttonProps,
+      hover: false,
     }
   },
 });
@@ -81,6 +82,8 @@ export default defineComponent({
       fontSize: buttonFontSize,
     }"
     @click="buttonProps.handleClick"
+    @mouseover="hover = true"
+    @mouseleave="hover = false"
   >
     {{ buttonText }}
   </button>
@@ -95,5 +98,9 @@ export default defineComponent({
   font-family: Inter, monospace;                        /* Define a fonte dos botões */
   cursor: pointer;                                      /* Altera o cursor para um ponteiro ao passar sobre os botões */
   transition: background-color 0.3s ease;               /* Adiciona uma transição suave à cor de fundo dos botões */
+}
+
+.custom-button:hover {
+  filter: brightness(0.9);
 }
 </style>

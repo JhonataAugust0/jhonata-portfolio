@@ -28,10 +28,11 @@ export default defineComponent({
         <div class="content">
           <ModalContent
             :content="avatarImage"
-            :imageWidth="'210px'"
+            :imageWidth="'240px'"
             :imageHeight="'216px'"
             modalPadding="12px"
             modalBorderRadius="8px"
+            modalBackgroundColor="var(--var-background-modal-blue)"
           />
           <TextContent :text=textAboutMe />
         </div>
@@ -47,8 +48,11 @@ export default defineComponent({
   width: 100vw;                                             /* Define a largura do contêiner como 100% da largura da janela do navegador */
   background-color: var(--var-background-color-dark-blue);  /* Define a cor de fundo do container*/
   position: absolute;                                       /* Define o contêiner como uma posição absoluta */
-  top: 50%;                                                 /* Define a distância do topo da janela do navegador como 50% */
-    min-height: calc(60vh - 102px);                         /* Define a altura mínima do contêiner como 60% da altura da janela do navegador, menos 102 pixels */
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  top: 45%;                                                 /* Define a distância do topo da janela do navegador como 50% */
+    min-height: calc(55vh - 102px);                         /* Define a altura mínima do contêiner como 60% da altura da janela do navegador, menos 102 pixels */
 }
 
 /* Estilo do contêiner de conteúdo */
@@ -66,6 +70,7 @@ export default defineComponent({
 .content{
   display: flex;                                            /* Define o contêiner como um contêiner flexível */
   gap: 12px;                                                /* Define  o espaçço entre os itens de um container flexivel como 12px*/
+  overflow: hidden;
 }
 
 /* Estilo do contêiner para o texto da apresentação */
@@ -75,6 +80,7 @@ export default defineComponent({
   display: flex;                                            /* Define o contêiner como um contêiner flexível */
   flex-wrap: wrap;                                          /* Permite que os itens flexíveis sejam dispostos em várias linhas */
   flex-direction: row;                                      /* Define a direção dos itens flexíveis como linha */
+  overflow: hidden;
 }
 
 
@@ -91,7 +97,7 @@ h1 {
 @media only screen and (max-width: 768px) {
   .about-me-container {
     padding: 10px;                                      /* Reduz o preenchimento do cabeçalho para 10 pixels */
-    top: 68%;                                           /* Define a distância do topo da janela do navegador como 68% */
+    top: 70%;                                           /* Define a distância do topo da janela do navegador como 68% */
   }
 
   .content-wrapper {
@@ -100,6 +106,11 @@ h1 {
 
   .text-presentation-container {
     font-size: 16px;                                    /* Reduz o tamanho da fonte do texto para 16 pixels */
+  }
+
+  .content {
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 </style>
