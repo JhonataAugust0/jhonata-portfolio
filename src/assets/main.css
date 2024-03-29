@@ -22,11 +22,11 @@
     place-items: center;                                   /* Centraliza o conteúdo verticalmente e horizontalmente */
   }
 
-  #app {
-    display: grid;                                         /* Define o elemento com o id "app" como um contêiner de grid */
-    grid-template-columns: 1fr 1fr;                        /* Define duas colunas com largura igual */
-    padding: 0 2rem;                                       /* Remove o preenchimento horizontal do elemento */
-  }
+  /*#app {*/
+  /*  display: grid;                                         !* Define o elemento com o id "app" como um contêiner de grid *!*/
+  /*  grid-template-columns: 1fr 1fr;                        !* Define duas colunas com largura igual *!*/
+  /*  padding: 0 2rem;                                       !* Remove o preenchimento horizontal do elemento *!*/
+  /*}*/
 }
 
 /* Estilos adicionais aplicados quando a largura mínima da tela é 1024 pixels */

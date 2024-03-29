@@ -89,3 +89,9 @@ export default defineComponent({
   }
 });
 </script>
+
+<style scoped>
+modal-content {
+  width: 100%;
+}
+</style>

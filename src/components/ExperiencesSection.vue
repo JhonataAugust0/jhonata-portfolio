@@ -48,14 +48,14 @@ export default defineComponent({
 <style scoped>
 .experiences-container {
   left: 0;
-  width: 100vw;
-  position: absolute;
+  width: 100%;
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  top: 140%;
   justify-content: center;
   padding-bottom: 8rem;
+  margin-top: calc(10px + 1rem);
 }
 
 /* Responsividade para dispositivos móveis */
@@ -65,7 +65,7 @@ export default defineComponent({
     flex-direction: column;
     flex-wrap: wrap;
     padding: 10px;                                      /* Reduz o preenchimento do cabeçalho para 10 pixels */
-    top: 230%;                                                 /* Define a distância do topo da janela do navegador como 50% */
+    //top: 230%;                                                 /* Define a distância do topo da janela do navegador como 50% */
     min-height: calc(55vh - 102px);
     left: 0;
     width: 100vw;
@@ -74,7 +74,7 @@ export default defineComponent({
 
 @media only screen and (max-width: 420px) {
   .experiences-container {
-    top: 296%;
+    //top: 296%;
     left: 0;
   }
 }

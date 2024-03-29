@@ -45,26 +45,23 @@ export default defineComponent({
 /* Estilos para o contêiner do componente AboutMe */
 .about-me-container {
   left: 0;
-  width: 100vw;                                             /* Define a largura do contêiner como 100% da largura da janela do navegador */
-  background-color: var(--var-background-color-dark-blue);  /* Define a cor de fundo do container*/
-  position: absolute;                                       /* Define o contêiner como uma posição absoluta */
-  display: inline-flex;
+  top: 0;
+  width: 100%;             /* Define a largura do contêiner como 100% */
+  background-color: var(--var-background-color-dark-blue);
+  position: relative;      /* Alterado para "relative" para alinhar com base no corpo da página */
+  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  padding-bottom: 2rem;
-  gap: 12px;
-  top: 58%;                                                 /* Define a distância do topo da janela do navegador como 50% */
-    min-height: calc(55vh - 102px);                         /* Define a altura mínima do contêiner como 60% da altura da janela do navegador, menos 102 pixels */
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  align-items: center;                        /* Centraliza o conteúdo verticalmente */
+  margin-top: calc(100px + 24rem);            /* Ajusta a margem superior para começar abaixo do PresentationHeader */
 }
 
-/* Estilo do contêiner de conteúdo */
 .content-wrapper {
-  max-width: 1200px;                                        /* Define a largura máxima do contêiner de conteúdo */
-  margin: 0 auto;                                           /* Centraliza o conteúdo horizontalmente */
-  padding: 20px 0;                                          /* Adiciona preenchimento ao redor do conteúdo */
-  display: flex;                                            /* Define o contêiner como um contêiner flexível */
-  flex-direction: column;                                   /* Define a direção dos filhos do contêiner como coluna */
-  align-items: center;                                      /* Centraliza os filhos verticalmente dentro do contêiner */
-  z-index: 5;                                               /* Define a ordem de empilhamento do elemento como 5 */
+  max-width: 1200px;       /* Define a largura máxima do conteúdo */
+  width: 100%;             /* Garante que o conteúdo se ajuste à largura do contêiner pai */
+  padding: 20px;           /* Adiciona preenchimento ao redor do conteúdo */
+  box-sizing: border-box;  /* Inclui preenchimento e borda no cálculo da largura */
 }
 
 /* Estilo do container que comporta o avatar e o texto de apresentação */
@@ -98,7 +95,7 @@ h1 {
 @media only screen and (max-width: 768px) {
   .about-me-container {
     padding: 10px;                                      /* Reduz o preenchimento do cabeçalho para 10 pixels */
-    top: 82%;                                           /* Define a distância do topo da janela do navegador como 68% */
+    margin-top: calc(100px + 38rem);                                          /* Define a distância do topo da janela do navegador como 68% */
   }
 
   .content-wrapper {
@@ -118,7 +115,6 @@ h1 {
 @media only screen and (max-width: 420px) {
   .about-me-container {
     padding: 10px;                                      /* Reduz o preenchimento do cabeçalho para 10 pixels */
-    top: 92%;                                           /* Define a distância do topo da janela do navegador como 68% */
     left: 0;
   }
 }

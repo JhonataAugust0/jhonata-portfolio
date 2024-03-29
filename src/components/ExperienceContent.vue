@@ -22,7 +22,7 @@
       <div class="technologies">
         <ul>
           <li v-for="(tech, index) in technologies" :key="index">
-            <a :href="tech.link" target="_blank" rel="noopener noreferrer">{{ tech.name }}</a>
+            <a :href="tech.link" target="_blank" rel="noopener noreferrer" class="link">{{ tech.name }}</a>
           </li>
         </ul>
       </div>
@@ -108,8 +108,8 @@ export default defineComponent({
 <style scoped>
 .container-description {
   margin: 4px;
-  min-width: 69.9%;
-  max-width: 70%;
+  min-width: 89.9%;
+  max-width: 90%;
 }
 
 .header {
@@ -185,6 +185,14 @@ export default defineComponent({
   font-weight: 400;
   font-size: 14px;
   text-align: justify;
+  display: block;
+  text-decoration: none;
+  padding: 8px 6px 6px 0px;
+  background-color: transparent;
+}
+
+.technologies a:hover {
+  filter: brightness(0.6);
 }
 
 @media (max-width: 768px) {

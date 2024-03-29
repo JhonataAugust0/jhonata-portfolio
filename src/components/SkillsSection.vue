@@ -131,18 +131,18 @@ export default defineComponent({
 
 <style scoped>
 .skills-container {
-  position: absolute;                                   /* Define a posição do cabeçalho como fixa */
-  left: 0;                                              /* Alinha o cabeçalho à esquerda da janela do navegador */
-  width: 100vw;                                         /* Define a largura do cabeçalho para ocupar toda a largura da janela */
+  left: 0;
+  top: 0;
+  position: relative;                                   /* Define a posição do cabeçalho como fixa */
+  width: 100%;                                         /* Define a largura do cabeçalho para ocupar toda a largura da janela */
   background-color: var(--var-background-color-blue);   /* Define a cor de fundo do cabeçalho */
   z-index: 5;
   box-shadow: var(--var-background-color-dark-blue) 2px 2px 2px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  padding-bottom: 2rem;
-  top: 100%;                                             /* Define a distância do topo da janela do navegador como 50% */
-    min-height: calc(50vh - 102px);                     /* Define a altura mínima do contêiner como 60% da altura da janela do navegador, menos 102 pixels */
-  }
+  align-items: center;
+}
 
 /* Estilo do contêiner de conteúdo */
 .content-wrapper {
@@ -175,7 +175,7 @@ export default defineComponent({
   justify-content: center;
   align-items: center;
   padding: 24px;
-  gap: 20px;
+  gap: 64px;
   transition: opacity 0.5s ease;
 }
 
@@ -210,11 +210,15 @@ export default defineComponent({
   .programming-skills-button-container {
     flex-direction: column;                             /* Altera a direção dos botões para coluna */
   }
+
+  .abilities-container {
+    gap: 20px
+  }
 }
 
 @media only screen and (max-width: 420px) {
   .skills-container {
-    top: 208%;
+    //top: 208%;
       min-height: calc(55vh - 102px);
     left: 0;
   }

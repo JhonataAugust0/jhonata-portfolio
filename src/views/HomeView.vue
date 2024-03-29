@@ -23,17 +23,9 @@ import ExperiencesSection from '@/components/ExperiencesSection.vue'
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.experience-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  align-content: flex-end;
-  align-self: flex-end;
-  justify-content: flex-end;
-  justify-items: flex-end;
-
-  //position: absolute;
+  padding-top: 2rem;
+  left: 0;
+  top: 0;
+  margin: 0 auto;
 }
 </style>

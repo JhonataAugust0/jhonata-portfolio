@@ -74,9 +74,14 @@ export default defineComponent({
   left: 0;
 }
 
+img {
+  border-radius: 6px;
+  border: none;
+}
+
 @media only screen and (max-width: 768px) {
   .container-description {
-    width: 95%;
+    width: 100%;
     justify-content: center;
     align-items: center;
   }
