@@ -171,13 +171,14 @@ export default defineComponent({
   position: absolute;                                   /* Define a posição do cabeçalho como fixa */
   top: 0;                                               /* Alinha o cabeçalho no topo da janela do navegador */
   left: 0;                                              /* Alinha o cabeçalho à esquerda da janela do navegador */
-  width: 100vw;                                         /* Define a largura do cabeçalho para ocupar toda a largura da janela */
+  width: 100%;                                          /* Define a largura do cabeçalho para ocupar toda a largura da janela */
   background-color: var(--var-background-color-blue);   /* Define a cor de fundo do cabeçalho */
   z-index: 5;
   box-shadow: var(--var-background-color-dark-blue) 2px 2px 2px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: baseline;
+  padding-bottom: 1rem;
 }
 
 /* Esta classe define o contêiner de conteúdo, que envolve o conteúdo da apresentação */
@@ -199,18 +200,18 @@ export default defineComponent({
 
 /* Este estilo define a formatação para o bloco de código */
 pre {
-  padding: 18px 18px 4px 18px;                                        /* Adiciona preenchimento ao redor do bloco de código */
+  padding: 18px 18px 4px 18px;                          /* Adiciona preenchimento ao redor do bloco de código */
   border-radius: 8px;                                   /* Adiciona cantos arredondados ao bloco de código */
   white-space: pre-wrap;                                /* Define como o espaço em branco deve ser tratado dentro do bloco de código */
   min-height: 355px;
-  max-height: 390px;
+  max-height: 480px;
   width: 100%;
   overflow: hidden;
 }
 
 /* Este estilo define a formatação para o texto dentro do bloco de código */
 code {
-  font-size: 18px;                                      /* Define o tamanho da fonte do texto */
+  font-size: 22px;                                      /* Define o tamanho da fonte do texto */
   color: var(--var-color-code-text-white);              /* Define a cor do texto */
   font-family: 'Source Code Pro', Inter, monospace;     /* Define a fonte do bloco de código */
   font-weight: 400;                                     /* Define a espessura da fonte como 300 (leve) */
@@ -245,6 +246,7 @@ code {
 @media only screen and (max-width: 768px) {
   .presentation-header-container {
     padding: 10px;                                      /* Reduz o preenchimento do cabeçalho para 10 pixels */
+    left: 0;
   }
 
   .content-wrapper {
@@ -258,10 +260,12 @@ code {
   .programming-languages-button-container {
     flex-direction: column;                             /* Altera a direção dos botões para coluna */
   }
+}
 
-  .language-programming-button {
-    width: 100%;                                        /* Faz os botões ocuparem toda a largura disponível */
-    margin-bottom: 10px;                                /* Adiciona margem inferior de 10 pixels entre os botões */
+
+@media only screen and (max-width: 420px) {
+  .text-presentation-container pre {
+    margin-bottom: 16px;
   }
 }
 </style>
