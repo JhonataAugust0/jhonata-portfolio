@@ -74,23 +74,23 @@ export default defineComponent({
     const text = ["Aqui vai uma lista das tecnologias e", "ferramentas que possuo experiência!"]
     const skillsIconsPaths: SkillsIconsPathsInterface = {
       0: [
-        'public/icons/python-icon.svg',
-        'public/icons/js-icon.svg',
-        'public/icons/ts-icon.svg',
-        'public/icons/php-icon.svg',
-        'public/icons/c-sharp-icon.svg'
+        '/icons/python-icon.svg',
+        '/icons/js-icon.svg',
+        '/icons/ts-icon.svg',
+        '/icons/php-icon.svg',
+        '/icons/c-sharp-icon.svg'
       ],
       1: [
-        'public/icons/postgres-icon.svg',
-        'public/icons/mssql-icon.svg',
-        'public/icons/mysql-icon.svg'
+        '/icons/postgres-icon.svg',
+        '/icons/mssql-icon.svg',
+        '/icons/mysql-icon.svg'
       ],
       2: [
-        'public/icons/git-icon.svg',
-        'public/icons/docker-icon.svg',
-        'public/icons/linux-icon.svg',
-        'public/icons/aws-icon.svg',
-        'public/icons/rabbitmq-icon.svg'
+        '/icons/git-icon.svg',
+        '/icons/docker-icon.svg',
+        '/icons/linux-icon.svg',
+        '/icons/aws-icon.svg',
+        '/icons/rabbitmq-icon.svg'
       ],
       3: ['Opa, essa habilidade eu não desenvolvi ainda, haha 😅'],
     }
@@ -139,10 +139,10 @@ export default defineComponent({
   box-shadow: var(--var-background-color-dark-blue) 2px 2px 2px;
   display: flex;
   justify-content: center;
-  align-items: baseline;
-  top: 85%;                                             /* Define a distância do topo da janela do navegador como 50% */
-    min-height: calc(55vh - 102px);                     /* Define a altura mínima do contêiner como 60% da altura da janela do navegador, menos 102 pixels */
-}
+  padding-bottom: 2rem;
+  top: 100%;                                             /* Define a distância do topo da janela do navegador como 50% */
+    min-height: calc(50vh - 102px);                     /* Define a altura mínima do contêiner como 60% da altura da janela do navegador, menos 102 pixels */
+  }
 
 /* Estilo do contêiner de conteúdo */
 .content-wrapper {
@@ -191,8 +191,10 @@ export default defineComponent({
 @media only screen and (max-width: 768px) {
   .skills-container {
     display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     padding: 10px;                                      /* Reduz o preenchimento do cabeçalho para 10 pixels */
-    top: 188%;                                                 /* Define a distância do topo da janela do navegador como 50% */
+    top: 160%;                                                 /* Define a distância do topo da janela do navegador como 50% */
     min-height: calc(55vh - 102px);
     left: 0;
   }
@@ -207,6 +209,14 @@ export default defineComponent({
 
   .programming-skills-button-container {
     flex-direction: column;                             /* Altera a direção dos botões para coluna */
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .skills-container {
+    top: 208%;
+      min-height: calc(55vh - 102px);
+    left: 0;
   }
 }
 </style>

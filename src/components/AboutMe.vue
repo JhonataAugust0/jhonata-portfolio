@@ -14,7 +14,7 @@ export default defineComponent({
     ]
     return {
       textAboutMe,
-      avatarImage: "../../public/avatar-2.jpg",
+      avatarImage: "/avatar-2.jpg",
     }
   },
 });
@@ -50,8 +50,9 @@ export default defineComponent({
   position: absolute;                                       /* Define o contêiner como uma posição absoluta */
   display: inline-flex;
   flex-wrap: wrap;
+  padding-bottom: 2rem;
   gap: 12px;
-  top: 45%;                                                 /* Define a distância do topo da janela do navegador como 50% */
+  top: 58%;                                                 /* Define a distância do topo da janela do navegador como 50% */
     min-height: calc(55vh - 102px);                         /* Define a altura mínima do contêiner como 60% da altura da janela do navegador, menos 102 pixels */
 }
 
@@ -97,7 +98,7 @@ h1 {
 @media only screen and (max-width: 768px) {
   .about-me-container {
     padding: 10px;                                      /* Reduz o preenchimento do cabeçalho para 10 pixels */
-    top: 70%;                                           /* Define a distância do topo da janela do navegador como 68% */
+    top: 82%;                                           /* Define a distância do topo da janela do navegador como 68% */
   }
 
   .content-wrapper {
@@ -111,6 +112,14 @@ h1 {
   .content {
     display: flex;
     flex-wrap: wrap;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .about-me-container {
+    padding: 10px;                                      /* Reduz o preenchimento do cabeçalho para 10 pixels */
+    top: 92%;                                           /* Define a distância do topo da janela do navegador como 68% */
+    left: 0;
   }
 }
 </style>

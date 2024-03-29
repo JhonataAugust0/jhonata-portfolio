@@ -178,6 +178,7 @@ export default defineComponent({
   display: flex;
   justify-content: center;
   align-items: baseline;
+  padding-bottom: 1rem;
 }
 
 /* Esta classe define o contêiner de conteúdo, que envolve o conteúdo da apresentação */
@@ -203,14 +204,14 @@ pre {
   border-radius: 8px;                                   /* Adiciona cantos arredondados ao bloco de código */
   white-space: pre-wrap;                                /* Define como o espaço em branco deve ser tratado dentro do bloco de código */
   min-height: 355px;
-  max-height: 390px;
+  max-height: 4000px;
   width: 100%;
   overflow: hidden;
 }
 
 /* Este estilo define a formatação para o texto dentro do bloco de código */
 code {
-  font-size: 18px;                                      /* Define o tamanho da fonte do texto */
+  font-size: 22px;                                      /* Define o tamanho da fonte do texto */
   color: var(--var-color-code-text-white);              /* Define a cor do texto */
   font-family: 'Source Code Pro', Inter, monospace;     /* Define a fonte do bloco de código */
   font-weight: 400;                                     /* Define a espessura da fonte como 300 (leve) */
@@ -245,6 +246,7 @@ code {
 @media only screen and (max-width: 768px) {
   .presentation-header-container {
     padding: 10px;                                      /* Reduz o preenchimento do cabeçalho para 10 pixels */
+    left: 0;
   }
 
   .content-wrapper {
@@ -258,10 +260,12 @@ code {
   .programming-languages-button-container {
     flex-direction: column;                             /* Altera a direção dos botões para coluna */
   }
+}
 
-  .language-programming-button {
-    width: 100%;                                        /* Faz os botões ocuparem toda a largura disponível */
-    margin-bottom: 10px;                                /* Adiciona margem inferior de 10 pixels entre os botões */
+
+@media only screen and (max-width: 420px) {
+  .text-presentation-container pre {
+    margin-bottom: 16px;
   }
 }
 </style>
