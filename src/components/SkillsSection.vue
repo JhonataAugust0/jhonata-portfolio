@@ -4,7 +4,7 @@
       <div class="text-skills-container">
         <TextContent
           :text=text
-          :textFontSize="'18px'"
+          :textFontSize="'22px'"
           :textBackgroundColor="'transparent'"
           :textBorderColor="'transparent'"
         />
@@ -21,36 +21,36 @@
         <CustomButton
           buttonText="Linguagens de programação"
           buttonColor="var(--var-background-modal-blue)"
-          buttonWidth="162px"
-          buttonHeight="48px"
+          buttonWidth="176px"
+          buttonHeight="58px"
           borderRadius="4px"
           borderColor="1px solid var(--var-background-modal-blue)"
           buttonTextColor="var(--var-color-text-button-white)"
-          buttonFontSize="14px"
+          buttonFontSize="16px"
           @click="changeSkillIcon(0)"
         />
 
         <CustomButton
           buttonText="Bancos de dados"
           buttonColor="var(--var-background-modal-blue)"
-          buttonWidth="162px"
-          buttonHeight="48px"
+          buttonWidth="176px"
+          buttonHeight="58px"
           borderRadius="4px"
           borderColor="1px solid var(--var-background-modal-blue)"
           buttonTextColor="var(--var-color-text-button-white)"
-          buttonFontSize="14px"
+          buttonFontSize="16px"
           @click="changeSkillIcon(1)"
         />
 
         <CustomButton
           buttonText="Ferramentas"
           buttonColor="var(--var-background-modal-blue)"
-          buttonWidth="162px"
-          buttonHeight="48px"
+          buttonWidth="176px"
+          buttonHeight="58px"
           borderRadius="4px"
           borderColor="1px solid var(--var-background-modal-blue)"
           buttonTextColor="var(--var-color-text-button-white)"
-          buttonFontSize="14px"
+          buttonFontSize="16px"
           @click="changeSkillIcon(2)"
         />
       </div>

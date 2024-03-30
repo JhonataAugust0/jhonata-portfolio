@@ -65,17 +65,10 @@ export default defineComponent({
     flex-direction: column;
     flex-wrap: wrap;
     padding: 10px;                                      /* Reduz o preenchimento do cabeçalho para 10 pixels */
-    //top: 230%;                                                 /* Define a distância do topo da janela do navegador como 50% */
     min-height: calc(55vh - 102px);
     left: 0;
     width: 100vw;
   }
 }
 
-@media only screen and (max-width: 420px) {
-  .experiences-container {
-    //top: 296%;
-    left: 0;
-  }
-}
 </style>

@@ -109,50 +109,55 @@ export default defineComponent({
         <CustomButton
           buttonText="Python"
           buttonColor="var(--var-background-modal-blue)"
-          buttonWidth="72px"
-          buttonHeight="38px"
+          buttonWidth="82px"
+          buttonHeight="40px"
           borderRadius="4px"
           borderColor="1px solid var(--var-background-modal-blue)"
+          buttonFontSize="16px"
           buttonTextColor="var(--var-color-text-button-white)"
           @click="changeButtonText(0)"
         />
         <CustomButton
           buttonText="Php"
           buttonColor="var(--var-background-modal-blue)"
-          buttonWidth="72px"
-          buttonHeight="38px"
+          buttonWidth="82px"
+          buttonHeight="40px"
           borderRadius="4px"
           borderColor="1px solid var(--var-background-modal-blue)"
+          buttonFontSize="16px"
           buttonTextColor="var(--var-color-text-button-white)"
           @click="changeButtonText(1)"
         />
         <CustomButton
           buttonText="C"
           buttonColor="var(--var-background-modal-blue)"
-          buttonWidth="72px"
-          buttonHeight="38px"
+          buttonWidth="82px"
+          buttonHeight="40px"
           borderRadius="4px"
           borderColor="1px solid var(--var-background-modal-blue)"
+          buttonFontSize="16px"
           buttonTextColor="var(--var-color-text-button-white)"
           @click="changeButtonText(2)"
         />
         <CustomButton
           buttonText="JS"
           buttonColor="var(--var-background-modal-blue)"
-          buttonWidth="72px"
-          buttonHeight="38px"
+          buttonWidth="82px"
+          buttonHeight="40px"
           borderRadius="4px"
           borderColor="1px solid var(--var-background-modal-blue)"
           buttonTextColor="var(--var-color-text-button-white)"
+          buttonFontSize="16px"
           @click="changeButtonText(3)"
         />
         <CustomButton
           buttonText="C#"
           buttonColor="var(--var-background-modal-blue)"
-          buttonWidth="72px"
-          buttonHeight="38px"
+          buttonWidth="82px"
+          buttonHeight="40px"
           borderRadius="4px"
           borderColor="1px solid var(--var-background-modal-blue)"
+          buttonFontSize="16px"
           buttonTextColor="var(--var-color-text-button-white)"
           @click="changeButtonText(4)"
         />
@@ -245,20 +250,30 @@ code {
 /* Responsividade para dispositivos móveis */
 @media only screen and (max-width: 768px) {
   .presentation-header-container {
-    padding: 10px;                                      /* Reduz o preenchimento do cabeçalho para 10 pixels */
+    padding: 10px; /* Reduz o preenchimento do cabeçalho para 10 pixels */
     left: 0;
   }
 
   .content-wrapper {
-    padding: 10px;                                      /* Reduz o preenchimento do conteúdo para 10 pixels */
-  }
-
-  .text-presentation-container pre {
-    font-size: 16px;                                    /* Reduz o tamanho da fonte do texto para 16 pixels */
+    padding: 10px; /* Reduz o preenchimento do conteúdo para 10 pixels */
   }
 
   .programming-languages-button-container {
-    flex-direction: column;                             /* Altera a direção dos botões para coluna */
+    flex-direction: column; /* Altera a direção dos botões para coluna */
+  }
+
+  pre {
+    min-height: 400px;
+    max-height: 630px;
+  }
+
+  code {
+    font-size: 20px;
+  }
+
+  .text-office {
+    margin-top: 10px;
+    font-size: 24px;
   }
 }
 
@@ -266,6 +281,14 @@ code {
 @media only screen and (max-width: 420px) {
   .text-presentation-container pre {
     margin-bottom: 16px;
+  }
+
+  code {
+    font-size: 20px;
+  }
+
+  .text-office {
+    font-size: 20px;
   }
 }
 </style>
