@@ -199,7 +199,10 @@ export default defineComponent({
   .texts {
     flex-direction: column;
     flex-wrap: wrap;
-    padding: 12px;
+  }
+
+  .texts p {
+    font-size: 18px;
   }
 
   .period {
@@ -220,6 +223,10 @@ export default defineComponent({
     flex-direction: column;
   }
 
+  .details p {
+    font-size: 16px;
+  }
+
   .technologies ul {
     padding: 4px;
     display: flex;
@@ -230,5 +237,6 @@ export default defineComponent({
     margin-bottom: 5px;
     margin-right: 18px;
   }
+
 }
 </style>
