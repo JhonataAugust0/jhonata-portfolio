@@ -45,7 +45,7 @@ export default defineComponent({
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/jhonata-augusto-2301541b5/" target="_blank" rel="noopener noreferrer" >
+              <a href="https://www.linkedin.com/in/jhonata-augusto/" target="_blank" rel="noopener noreferrer" >
                 <img src="/icons/linkedin-icon.svg" alt="LinkedIn" height="42px" width="42px"/>
               </a>
             </li>
